@@ -1,0 +1,62 @@
+appearance:
+  customHeader:
+    enabled: true
+    header: "logo"
+    headerColor:
+      backgroundColor: "radial-gradient(circle, rgba(255,145,0,1) 0%, rgba(255,159,122,1)\
+        \ 35%, rgba(255,59,0,1) 100%);"
+      color: "white"
+      hoverColor: "grey"
+    logo:
+      image:
+        logoUrl: "https://sftp.sinqia.com.br/images/logo/Sinqia_ElementoGr%C3%A1fico_RGB_laranja-escuro.png"
+    logoText: "Betto"
+    thinHeader: false
+    title: "Desenvolvimento"
+  loginTheme:
+    branding: "https://raw.githubusercontent.com/rosthansilva/rosthansilva.github.io/refs/heads/backp/images/Jenkins_logo.png"
+    customCSS: |2-
+              body {
+                  font-family: Arial, sans-serif;
+                  text-align: left;
+                  margin: 20px;
+              }
+              .container {
+                  display: flex;
+                  align-items: center;
+              }
+              .logo {
+                  height: 80px; /* Ajuste a altura da logo conforme necessário */
+                  margin-right: 15px;
+              }
+              h1 {
+                  margin: 0;
+                  font-size: 24px;
+              }
+              h3 {
+                  color: black;
+                  margin: 5px 0;
+              }
+              p {
+                  margin: 5px 0;
+                  font-size: 16px;
+                  color: gray;
+              }
+    footer: |2-
+
+      <h3>Sinqia Plataform Engeniering</h3>
+      <h3><font color="red"> Qualquer Problema nos encontre via <p></p> </font></h3>
+      <a href=""><font color="blue">Betto Issues</font></a> &nbsp;&nbsp;
+      <a href=""><font color="blue">JIRA</font></a> &nbsp;&nbsp;
+      <a href=""><font color="blue">Email</font></a>&nbsp;&nbsp;
+      <a href=""><font color="blue">Teams</font></a> &nbsp;&nbsp; </p>
+    header: "<script>\ndocument.getElementsByTagName('h1')[0].textContent = ''\n</script>\n\
+      \n<!-- Corrigido: fechamento correto do style -->\n<img src=\"https://sftp.sinqia.com.br/images/logo/Sinqia_ElementoGr%C3%A1fico_RGB_laranja-escuro.png\"\
+      \ \n     alt=\"Logo da Sinqia\" \n     style=\"width:60px; height:60px;\">\n\
+      \n<h1>Betto Build Server</h1>\n\n"
+    useDefaultTheme: true
+  prism:
+    theme: DARK
+  themeManager:
+    disableUserThemes: true
+    theme: "material-light-blue"

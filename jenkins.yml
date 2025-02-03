@@ -1,0 +1,67 @@
+jenkins:
+  systemMessage: >
+    <h1>Bem-vindo ao Betto nosso servidor de build</h1>
+    <p>
+      Beto é uma distro de Jenkins e é <strong>100% configurado e gerenciado "como código"</strong>.
+      A configuração é gerenciada principalmente pelo plugin
+      <strong>Jenkins Configuration as Code (JCasC)</strong>.
+    </p>
+    <p>
+      O arquivo de configuração do JCasC pode ser encontrado em
+      <a href="https://seu-repositorio/jenkins.yaml">seu repositório</a>.
+    </p>
+    <p>
+      Está tendo dificuldade para criar algo? Entre em contato com os
+      <strong><a href="https://seu-repositorio/jenkins.yaml">Time de Plataforma</a></strong>.
+    </p>
+
+#   authorizationStrategy:
+#     roleBased:
+#       roles:
+#         global:
+#           - name: "admin"
+#             description: "Jenkins administrators"
+#             permissions:
+#               - "Overall/Administer"
+#             assignments:
+#               - "admin"
+#           - name: "readonly"
+#             description: "Read-only users"
+#             permissions:
+#               - "Overall/Read"
+#               - "Job/Read"
+#             assignments:
+#               - "authenticated"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+#   clouds:
+#     - docker:
+#         dockerApi:
+#           dockerHost:
+#             uri: "unix://var/run/docker.sock"
+#         name: "docker"
+#         templates:
+#           - labelString: "deploy"
+#             name: "jnlp"
+#             dockerTemplateBase:
+#               image: "jenkins/jnlp-slave:alpine"
+#             pullStrategy: PULL_LATEST
+#             remoteFs: "/home/jenkins"
+#             connector: attach
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: true
+unclassified:
+  location:
+    url: "http://127.0.0.1:9080/"
+#   # simple-theme-plugin:
+#   #   elements:
+#   #   - cssUrl:
+#   #       url: "https://cdn.rawgit.com/afonsof/jenkins-material-theme/gh-pages/dist/material-purple.css"
+#   shell:
+#     shell: "/bin/bash"
+  

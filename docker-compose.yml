@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  jenkins:
+    container_name: jenkins-server
+    build:
+      context: .
+      args:
+        USER_GID: $USER_GID
+        USER_ID: $USER_ID
+    image: jenkins-jcasc:v1
+    environment:
+      CASC_JENKINS_CONFIG: $CASC_JENKINS_CONFIG
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      ANSIBLE_CONFIG: /home/jenkins/ansible/ansible.cfg
+    ports:
+      - 9080:8080
+    volumes:
+      - ./data/jenkins:$JENKINS_HOME
+      - ./bashrc:$JENKINS_HOME/.bashrc
+      - ./config/:$CASC_JENKINS_CONFIG
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./img/Jenkins_logo.png:$JENKINS_HOME/userContent/layout/logo.jpg
